@@ -20,10 +20,10 @@ minuteCountD :: (Eq a1, Eq a, Num a, Num a1, Num a2) => a2 -> a1 -> a -> a1 -> a
 minuteCountD n sHour sMin wHour wMin =
     if sHour == wHour && sMin == wMin
         then n
-    else
+    	else
         if sMin == 59
             then
                 if sHour == 23
                     then minuteCountD (n + 1) 0 0 wHour wMin
-                else minuteCountD (n + 1) (sHour + 1) 0 wHour wMin
-        else minuteCountD (n + 1) sHour (sMin + 1) wHour wMin
+                	else minuteCountD (n + 1) (sHour + 1) 0 wHour wMin
+        	else minuteCountD (n + 1) sHour (sMin + 1) wHour wMin
